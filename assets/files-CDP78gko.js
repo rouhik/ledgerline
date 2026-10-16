@@ -1,0 +1,6 @@
+import{o as u,aA as f,aB as h}from"./index-DjC2wkf-.js";/**
+ * @license lucide-react v0.468.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const d=u("Download",[["path",{d:"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4",key:"ih7n3h"}],["polyline",{points:"7 10 12 15 17 10",key:"2ggqvy"}],["line",{x1:"12",x2:"12",y1:"15",y2:"3",key:"1vk2je"}]]);async function v(o,r,a="application/octet-stream"){if(f()){const{invoke:t}=await h(async()=>{const{invoke:l}=await import("./core-DV6XEvTN.js");return{invoke:l}},[],import.meta.url);return t("save_file",{name:o,dataBase64:r})}const e=atob(r),i=new Uint8Array(e.length);for(let t=0;t<e.length;t++)i[t]=e.charCodeAt(t);const s=window.matchMedia?.("(pointer: coarse)").matches,c=new File([i],o,{type:a});if(s&&navigator.canShare?.({files:[c]}))try{return await navigator.share({files:[c],title:o}),!0}catch(t){if(t.name==="AbortError")return!1}const n=document.createElement("a");return n.href=URL.createObjectURL(new Blob([i],{type:a})),n.download=o,n.click(),setTimeout(()=>URL.revokeObjectURL(n.href),2e3),!0}function p(o){const r=new TextEncoder().encode(o);let a="";for(let e=0;e<r.length;e+=32768)a+=String.fromCharCode(...r.subarray(e,e+32768));return btoa(a)}export{d as D,v as s,p as t};
